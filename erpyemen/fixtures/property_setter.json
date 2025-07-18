@@ -1,0 +1,72 @@
+[
+  {
+    "doctype": "Property Setter",
+    "name": "Purchase Invoice Item-item_name-columns",
+    "doctype_or_field": "DocField",
+    "doc_type": "Purchase Invoice Item",
+    "field_name": "item_name",
+    "property": "columns",
+    "value": "3",
+    "property_type": "Int"
+  },
+  {
+    "doctype": "Property Setter",
+    "name": "Purchase Invoice Item-qty-columns",
+    "doctype_or_field": "DocField",
+    "doc_type": "Purchase Invoice Item",
+    "field_name": "qty",
+    "property": "columns",
+    "value": "1",
+    "property_type": "Int"
+  },
+  {
+    "doctype": "Property Setter",
+    "name": "Purchase Invoice Item-uom-columns",
+    "doctype_or_field": "DocField",
+    "doc_type": "Purchase Invoice Item",
+    "field_name": "uom",
+    "property": "columns",
+    "value": "2",
+    "property_type": "Int"
+  },
+  {
+    "doctype": "Property Setter",
+    "name": "Purchase Invoice Item-rate-columns",
+    "doctype_or_field": "DocField",
+    "doc_type": "Purchase Invoice Item",
+    "field_name": "rate",
+    "property": "columns",
+    "value": "2",
+    "property_type": "Int"
+  },
+  {
+    "doctype": "Property Setter",
+    "name": "Purchase Invoice Item-amount-columns",
+    "doctype_or_field": "DocField",
+    "doc_type": "Purchase Invoice Item",
+    "field_name": "amount",
+    "property": "columns",
+    "value": "2",
+    "property_type": "Int"
+  },
+  {
+    "doctype": "Property Setter",
+    "name": "Purchase Invoice update_stock-default",
+    "doctype_or_field": "DocField",
+    "doc_type": "Purchase Invoice",
+    "field_name": "update_stock",
+    "property": "default",
+    "value":"1",
+    "property_type": "Check"
+  },
+  {
+    "doctype": "Property Setter",
+    "name": "Sales Invoice sales-update_stock-default",
+    "doctype_or_field": "DocField",
+    "doc_type": "Sales Invoice",
+    "field_name": "update_stock",
+    "property": "default",
+    "value":"1",
+    "property_type": "Check"
+  }
+]

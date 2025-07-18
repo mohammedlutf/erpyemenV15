@@ -43,7 +43,12 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+    "Sales Invoice": "customizations/sales_invoice.js",
+    "Purchase Invoice": "customizations/purchase_invoice.js",
+    "Item": "customizations/item.js",
+    "Payment Entry": "customizations/payment_entry.js",
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -84,6 +89,7 @@ app_license = "mit"
 
 # before_install = "erpyemen.install.before_install"
 # after_install = "erpyemen.install.after_install"
+after_install = "erpyemen.setup.setup_party_type.add_account_party_type"
 
 # Uninstallation
 # ------------
@@ -145,6 +151,15 @@ app_license = "mit"
 # 	}
 # }
 
+doc_events = {
+    "Purchase Invoice": {
+        "on_submit": "erpyemen.customizations.purchase_invoice.update_item_expiry",
+        "on_submit": "erpyemen.customizations.purchase_invoice.update_item_prices"
+    },
+    "Sales Invoice": {
+        "validate": "erpyemen.customizations.sales_invoice.validate_selling_price"
+    }
+}
 # Scheduled Tasks
 # ---------------
 
@@ -242,3 +257,22 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [["fieldname",
+         "in", (
+            "expiry_date",
+            "sales_price",
+         )]]
+    },
+    {"dt": "Property Setter", "filters": [["doc_type", 
+    "in", (
+        "Purchase Invoice Item",
+        "Purchase Invoice",
+        "Sales Invoice",
+    
+    
+    )]]},
+    
+]

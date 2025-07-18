@@ -1,0 +1,22 @@
+[
+  {
+    "doctype": "Custom Field",
+    "name": "Purchase Invoice Item-expiry_date",
+    "dt": "Purchase Invoice Item",
+    "fieldname": "expiry_date",
+    "label": "Expiry Date",
+    "fieldtype": "Date",
+    "insert_after": "qty",
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Purchase Invoice Item-sales_price",
+    "dt": "Purchase Invoice Item",
+    "fieldname": "sales_price",
+    "label": "Sales Price",
+    "fieldtype": "Currency",
+    "insert_after": "qty",
+    "owner": "Administrator"
+  }
+]
