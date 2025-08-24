@@ -48,6 +48,7 @@ doctype_js = {
     "Purchase Invoice": "customizations/purchase_invoice.js",
     "Item": "customizations/item.js",
     "Payment Entry": "customizations/payment_entry.js",
+    "Stock Reconciliation": "customizations/stock_reconciliation.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -153,12 +154,17 @@ after_install = "erpyemen.setup.setup_party_type.add_account_party_type"
 
 doc_events = {
     "Purchase Invoice": {
-        "on_submit": "erpyemen.customizations.purchase_invoice.update_item_expiry",
-        "on_submit": "erpyemen.customizations.purchase_invoice.update_item_prices"
+        "on_submit": ["erpyemen.customizations.purchase_invoice.update_item_expiry",
+                        "erpyemen.customizations.purchase_invoice.update_item_prices",
+                        
+        ],
     },
     "Sales Invoice": {
         "validate": "erpyemen.customizations.sales_invoice.validate_selling_price"
-    }
+    },
+    "Serial and Batch Bundle":{
+        "after_insert":"erpyemen.customizations.serial_and_batch_bundle.after_insert"
+    },
 }
 # Scheduled Tasks
 # ---------------

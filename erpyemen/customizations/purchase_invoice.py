@@ -1,8 +1,10 @@
 import frappe
 
 def update_item_expiry(doc, method):
+    #frappe.msgprint("No barcodes defined.")
     for row in doc.items:
-        if row.expiry_date:
+        item = frappe.db.get_value("Item",{"item_code":row.item_code},["has_batch_no"])
+        if row.expiry_date and not item:
             frappe.db.set_value("Item", row.item_code, "end_of_life", row.expiry_date)
 
 def update_item_prices(doc, method):
@@ -31,4 +33,7 @@ def update_item_prices(doc, method):
                 "price_list": price_list,
                 "price_list_rate": item.sales_price,
                 "selling": 1
-            }).insert()            
+            }).insert()  
+
+
+

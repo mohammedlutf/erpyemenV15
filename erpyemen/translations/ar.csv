@@ -2,3 +2,7 @@ Sales Price,سعر البيع
 Amount,الاجمالي
 Connections,التوصيل
 Reports & Masters,التقارير والماجستير
+Show Item Name,عرض اسم الصنف
+Show Stock Qty,عرض الكمية
+Show Valuation Rate,عرض سعر التقييم
+Get all items with stock qty,عرض الأصناف التي لديها كمية فقط

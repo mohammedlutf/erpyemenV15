@@ -17,7 +17,6 @@ frappe.ui.form.on("Purchase Invoice", {
     after_save: function(frm) {
         frm.doc.items.forEach(item => {
             if (!item.item_code || !item.rate) return;
-
             frappe.db.get_doc('Item', item.item_code).then(item_doc => {
                 let rate_in_stock_uom = item.rate;
 
@@ -56,7 +55,7 @@ frappe.ui.form.on("Purchase Invoice", {
                 });
             });
         });
-    }
-
+    },
+  
 
 });
