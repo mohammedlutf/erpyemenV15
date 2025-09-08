@@ -1,0 +1,21 @@
+// {
+//      "content":"[]",
+//     "name":"stock extends",
+//     "label":"stock extends",
+//     "extends":"stock",
+//     "public":1,
+//     "doctype": "Workspace",
+//     "shortcuts":[
+//         {
+//             "dependencies": "Item",
+//             "hidden": 0,
+//             "is_query_report": 1,
+//             "label": "Stock Projected Qty Extended",
+//             "link_count": 0,
+//             "link_to": "report/Stock Projected Qty Extended",
+//             "link_type": "Report",
+//             "onboard": 1,
+//             "type": "Link"
+//             }
+//     ]
+// }

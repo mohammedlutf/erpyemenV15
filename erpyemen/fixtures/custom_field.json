@@ -18,5 +18,97 @@
     "fieldtype": "Currency",
     "insert_after": "qty",
     "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Item Item-manufacturer_name",
+    "dt": "Item",
+    "fieldname": "manufacturer_name",
+    "label": "Manufacturer Name",
+    "fieldtype": "Data",
+    "insert_after": "stock_uom",
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Item Item-mfr_part_number",
+    "dt": "Item",
+    "fieldname": "mfr_part_number",
+    "label": "Mfr Part Number",
+    "fieldtype": "Data",
+    "insert_after": "stock_uom",
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Item Item-vendor_part_no",
+    "dt": "Item",
+    "fieldname": "vendor_part_no",
+    "label": "Vendor Part No",
+    "fieldtype": "Data",
+    "insert_after": "stock_uom",
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Item Item-serial_number",
+    "dt": "Item",
+    "fieldname": "serial_number",
+    "label": "Serial Number",
+    "fieldtype": "Data",
+    "insert_after": "stock_uom",
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Item Item-model_number",
+    "dt": "Item",
+    "fieldname": "model_number",
+    "label": "Model Number",
+    "fieldtype": "Data",
+    "insert_after": "stock_uom",
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Quotation Quotation-delivery_time",
+    "dt": "Quotation",
+    "fieldname": "delivery_time",
+    "label": "DELIVERY TIME",
+    "fieldtype": "Select",
+    "insert_after": "valid_till",
+    "options":"3 - 7 DAYS A.R.O\n3 - 10 DAYS A.R.O\n1 - 2 WEEKS A.R.O\n2 - 3 WEEKS A.R.O\n2 - 4 WEEKS A.R.O\n3 - 6 WEEKS A.R.O\n6 - 8 WEEKS A.R.O", 
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Quotation Quotation-order_track",
+    "dt": "Quotation",
+    "fieldname": "order_track",
+    "label": "Order Track",
+    "fieldtype": "Link",
+    "insert_after": "order_type",
+    "options":"Order Track",
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Packing Slip Item Packing-hs_code",
+    "dt": "Packing Slip Item",
+    "fieldname": "hs_code",
+    "label": "HS Code",
+    "fieldtype": "Data",
+    "insert_after": "item_code",
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Packing Slip Item Packing-item_no_inpo",
+    "dt": "Packing Slip Item",
+    "fieldname": "item_no_inpo",
+    "label": "Item No In PO",
+    "fieldtype": "Data",
+    "insert_after": "item_code",
+    "owner": "Administrator"
   }
 ]

@@ -1,0 +1,203 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-08-31 20:55:05.322014",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_oroz",
+  "naming_series",
+  "rfq_no",
+  "pr_ref_no",
+  "po_no",
+  "po_ref_no",
+  "column_break_lzmw",
+  "date",
+  "rfq_date",
+  "rfq_due_date",
+  "mrr_no",
+  "section_break_eoqd",
+  "customer",
+  "column_break_xjmp",
+  "status",
+  "section_break_bryx",
+  "users",
+  "section_break_qjiv",
+  "contributors",
+  "section_break_rsvm",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_oroz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "no_copy": 1,
+   "options": "OT-.####",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "rfq_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "RFQ NO",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_lzmw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_rsvm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Order Track",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "pr_ref_no",
+   "fieldtype": "Data",
+   "label": "PR Ref NO"
+  },
+  {
+   "fieldname": "po_no",
+   "fieldtype": "Data",
+   "label": "PO NO"
+  },
+  {
+   "fieldname": "po_ref_no",
+   "fieldtype": "Data",
+   "label": "PO Ref NO"
+  },
+  {
+   "fieldname": "rfq_date",
+   "fieldtype": "Date",
+   "label": "RFQ Date"
+  },
+  {
+   "fieldname": "rfq_due_date",
+   "fieldtype": "Date",
+   "label": "RFQ DUE DATE"
+  },
+  {
+   "fieldname": "mrr_no",
+   "fieldtype": "Data",
+   "label": "MRR NO"
+  },
+  {
+   "fieldname": "section_break_eoqd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_xjmp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nCompleted\nCancelled",
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_bryx",
+   "fieldtype": "Section Break",
+   "label": "People Who Works The Order"
+  },
+  {
+   "fieldname": "users",
+   "fieldtype": "Table",
+   "label": "Users",
+   "options": "Order Track users"
+  },
+  {
+   "fieldname": "section_break_qjiv",
+   "fieldtype": "Section Break",
+   "label": "People Who Contribute On This Order"
+  },
+  {
+   "fieldname": "contributors",
+   "fieldtype": "Table",
+   "label": "Contributors",
+   "options": "Order Track Contributors"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-31 21:57:30.261748",
+ "modified_by": "Administrator",
+ "module": "erpyemen",
+ "name": "Order Track",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "row_format": "Dynamic",
+ "search_fields": "rfq_no",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "rfq_no",
+ "track_seen": 1
+}

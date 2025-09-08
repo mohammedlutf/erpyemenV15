@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-31 21:45:18.260323",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "people_who_contribute_on_this_order_section",
+  "contributor",
+  "column_break_ottp",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_ottp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contributor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Contributor ",
+   "options": "User",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "people_who_contribute_on_this_order_section",
+   "fieldtype": "Section Break",
+   "label": "People Who Contribute On This Order"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-31 21:49:37.307614",
+ "modified_by": "Administrator",
+ "module": "erpyemen",
+ "name": "Order Track Contributors",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

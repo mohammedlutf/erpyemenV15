@@ -68,6 +68,7 @@ def execute(filters=None):
 				fields=["uom", "conversion_factor"],
 				order_by="conversion_factor desc"
 			)
+			print(uoms)
 			remaining_qty = int(bin.actual_qty or 0)
 			parts = []
 
@@ -82,6 +83,7 @@ def execute(filters=None):
 
 			qty_based_on_uom = " and ".join(parts)
 		except Exception as e:
+			print('in exipt')
 			qty_based_on_uom = ""
 		data.append(
 			[
