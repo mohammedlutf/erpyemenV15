@@ -49,6 +49,7 @@ doctype_js = {
     "Item": "customizations/item.js",
     "Payment Entry": "customizations/payment_entry.js",
     "Stock Reconciliation": "customizations/stock_reconciliation.js",
+    "Quotation": "customizations/quotation.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}

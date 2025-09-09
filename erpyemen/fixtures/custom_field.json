@@ -93,6 +93,56 @@
   },
   {
     "doctype": "Custom Field",
+    "name": "Quotation Item Quotation-manufacturer_name",
+    "dt": "Quotation Item",
+    "fieldname": "manufacturer_name",
+    "label": "Manufacturer Name",
+    "fieldtype": "Data",
+    "insert_after": "customer_item_code",
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Quotation Item Quotation-mfr_part_number",
+    "dt": "Quotation Item",
+    "fieldname": "mfr_part_number",
+    "label": "Mfr Part Number",
+    "fieldtype": "Data",
+    "insert_after": "customer_item_code",
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Quotation Item Quotation-vendor_part_no",
+    "dt": "Quotation Item",
+    "fieldname": "vendor_part_no",
+    "label": "Vendor Part No",
+    "fieldtype": "Data",
+    "insert_after": "customer_item_code",
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Quotation Item Quotation-serial_number",
+    "dt": "Quotation Item",
+    "fieldname": "serial_number",
+    "label": "Serial Number",
+    "fieldtype": "Data",
+    "insert_after": "item_name",
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
+    "name": "Quotation Item Quotation-model_number",
+    "dt": "Quotation Item",
+    "fieldname": "model_number",
+    "label": "Model Number",
+    "fieldtype": "Data",
+    "insert_after": "item_name",
+    "owner": "Administrator"
+  },
+  {
+    "doctype": "Custom Field",
     "name": "Packing Slip Item Packing-hs_code",
     "dt": "Packing Slip Item",
     "fieldname": "hs_code",
