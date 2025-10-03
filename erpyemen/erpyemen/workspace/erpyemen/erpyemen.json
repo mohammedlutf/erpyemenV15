@@ -1,0 +1,68 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"YbdZsRvZnT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Erpyemen</span>\",\"col\":12}},{\"id\":\"hhZtY-5yUQ\",\"type\":\"card\",\"data\":{\"card_name\":\"Stock Reconciliation Tool\",\"col\":4}},{\"id\":\"b7bcJh7ZyK\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "creation": "2025-10-01 19:35:55.100041",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "small-file",
+ "idx": 0,
+ "indicator_color": "light-blue",
+ "is_hidden": 0,
+ "label": "Erpyemen",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stock Reconciliation Tool",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stock Reconciliation Tool",
+   "link_count": 0,
+   "link_to": "Stock Reconciliation Tool",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Projected Qty Extended",
+   "link_count": 0,
+   "link_to": "Stock Projected Qty Extended",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-10-01 19:41:33.213049",
+ "modified_by": "Administrator",
+ "module": "erpyemen",
+ "name": "Erpyemen",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 10.0,
+ "shortcuts": [],
+ "title": "Erpyemen"
+}
