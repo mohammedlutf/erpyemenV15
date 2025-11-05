@@ -1,7 +1,7 @@
 ### erpyemen
 
 1> stock reconcilaion tool : now you can do stock reconcilation with uom 
-2>generate barcode for item and print the weighted item scale barcode 
+2>generate barcode for item and print the weighted items scale barcode 
 
 ### Installation
 
