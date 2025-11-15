@@ -35,8 +35,27 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Reports",
+   "label": "Stock Reconciliation Tool",
    "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stock Reconciliation Tool",
+   "link_count": 0,
+   "link_to": "Stock Reconciliation Tool",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 2,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -53,25 +72,16 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
-   "label": "Stock Reconciliation Tool",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Stock Reconciliation Tool",
+   "is_query_report": 1,
+   "label": "Shareholder Report",
    "link_count": 0,
-   "link_to": "Stock Reconciliation Tool",
-   "link_type": "DocType",
+   "link_to": "Shareholder Report",
+   "link_type": "Report",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2025-09-09 20:07:52.510928",
+ "modified": "2025-11-15 17:23:36.497140",
  "modified_by": "Administrator",
  "module": "erpyemen",
  "name": "Erpyemen",
