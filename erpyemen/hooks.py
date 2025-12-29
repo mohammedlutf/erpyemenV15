@@ -151,7 +151,9 @@ after_install = "erpyemen.setup.setup_party_type.add_account_party_type"
 # 		"on_trash": "method"
 # 	}
 # }
-
+override_report = {
+    "General Ledger": "erpyemen.customizations.general_ledger"
+}
 doc_events = {
     "Purchase Invoice": {
         "on_submit": ["erpyemen.customizations.purchase_invoice.update_item_expiry",
