@@ -1,0 +1,213 @@
+{% extends "templates/custom_base.html" %}
+
+{% block head %}
+<title>Autech | Home</title>
+{% endblock %}
+
+{% block content %}
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- Hero Section py-24 px-8-->
+<header class="relative min-h-screen flex  items-center  pt-20 md:pt-20 overflow-hidden bg-surface">
+   
+<div class="absolute inset-0 technical-grid pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center z-10">
+<div class="lg:col-span-7">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary-container/10 text-primary-container rounded-full mb-6">
+<span class="text-[10px] font-bold uppercase tracking-widest font-label">Precision Engineering</span>
+</div>
+<h1 class="text-5xl md:text-6xl font-headline font-bold text-on-surface leading-[1.05] tracking-tighter mb-8">
+<span class="text-primary-container">Autech</span> for <br/>
+                    import &amp; Engineering Services
+                </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed mb-10">
+                    Premier engineering and supply services for the Power, Automation, and Oil &amp; Gas industries. Building the technical backbone of modern infrastructure.
+                </p>
+<div class="flex flex-wrap gap-4">
+<a class=" no-underline bg-gradient-to-br from-primary to-primary-container text-white px-8 py-4 rounded-lg font-medium shadow-lg hover:shadow-primary/20 transition-all" href="/services">
+                        Explore Our Services
+                    </a>
+<!--<button class="border border-outline-variant/30 text-on-surface px-8 py-4 rounded-lg font-medium hover:bg-surface-container-high transition-all">-->
+<!--                        View Portfolio-->
+<!--                    </button>-->
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10 transform lg:rotate-2">
+<img class="w-full h-full object-cover" data-alt="high-tech industrial automation arm working in a modern facility with cinematic lighting and a clean industrial aesthetic" src="/assets/erpyemen/website/images/home1.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<div class="absolute -bottom-6 -left-6 w-48 h-48 bg-surface-container-high rounded-xl -z-10 transform -rotate-6"></div>
+<div class="absolute -top-6 -right-6 w-32 h-32 border-2 border-primary/20 rounded-xl -z-10"></div>
+</div>
+</div>
+</header>
+<!-- Mission Section -->
+<section class="py-24 bg-surface-container-low relative">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+<div class="space-y-8">
+<div class="label-md font-label uppercase tracking-widest text-primary-container font-semibold">Our Identity</div>
+<h2 class="text-4xl md:text-5xl font-headline font-bold leading-tight">AuTech is a dynamic and growing company.</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                        AuTech is supported by a team deeply experienced in the Power, Automation, and Oil &amp; Gas industries. We combine technical expertise with a relentless drive for innovation.
+                    </p>
+</div>
+<div class="bg-surface-container-lowest p-12 rounded-xl border-l-4 border-primary shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-5xl mb-6" data-icon="target">target</span>
+<h3 class="text-2xl font-headline font-bold mb-4">Our Mission</h3>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                        Our mission is to deliver premier engineering and supply services... ensuring excellence and unmatched quality. We empower industries through reliable automation and cutting-edge technical solutions.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Expertise: Bento Grid -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<div>
+<div class="label-md font-label uppercase tracking-widest text-primary-container font-semibold mb-2">Specialization</div>
+<h2 class="text-4xl font-headline font-bold">Core Expertise</h2>
+</div>
+<div class="hidden md:block h-[1px] flex-grow mx-12 bg-outline-variant/20"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Featured Card -->
+<div class="md:col-span-8 bg-surface-container-high rounded-xl overflow-hidden relative group">
+<div class="absolute inset-0 opacity-40 mix-blend-multiply transition-transform duration-700 group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="macro view of professional electrical control panel with organized wiring and industrial circuit breakers" src="/assets/erpyemen/website/images/home2.png"/>
+</div>
+<div class="relative p-10 h-full flex flex-col justify-end bg-gradient-to-t from-on-surface via-on-surface/20 to-transparent [&_*]:text-white">
+<h3 class="text-3xl font-headline font-bold mb-4">Instrumentation &amp; Control</h3>
+<p class="max-w-md opacity-90 mb-6">Advanced system integration for complex industrial processes, ensuring precision and safety at every stage of production.</p>
+<!--<a class="inline-flex items-center gap-2 font-medium text-primary-container hover:text-white transition-colors" href="#">-->
+<!--                            View Case Studies <span class="material-symbols-outlined">arrow_forward</span>-->
+<!--</a>-->
+</div>
+</div>
+<!-- Vertical Card -->
+<div class="md:col-span-4 bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/10 shadow-sm flex flex-col">
+<div class="w-14 h-14 bg-primary/5 rounded-lg flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="bolt">bolt</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Power Systems</h3>
+<p class="text-on-surface-variant flex-grow">Reliable power distribution and management solutions for critical infrastructure in energy and manufacturing sectors.</p>
+</div>
+<!-- Horizontal Secondary Cards -->
+<div class="md:col-span-4 bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="w-14 h-14 bg-primary/5 rounded-lg flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="oil_barrel">oil_barrel</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Oil &amp; Gas</h3>
+<p class="text-on-surface-variant">Tailored engineering services for upstream and downstream operations, focusing on efficiency and environmental compliance.</p>
+</div>
+<div class="md:col-span-4 bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="w-14 h-14 bg-primary/5 rounded-lg flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="settings_input_component">settings_input_component</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Supply Services</h3>
+<p class="text-on-surface-variant">Global procurement of high-spec industrial components from world-leading manufacturers.</p>
+</div>
+<div class="md:col-span-4 bg-primary-container text-white p-10 rounded-xl shadow-lg relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 opacity-10">
+<span class="material-symbols-outlined text-[160px]" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4 text-white">Unmatched Quality</h3>
+<p class="opacity-90 mb-6">Every project is executed to meet the most rigorous international standards of excellence.</p>
+<a href="/contact"
+   class="block w-full text-center py-3 bg-white text-primary font-bold rounded-lg hover:bg-surface-container-low transition-colors no-underline">
+   Contact Experts
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Partner Grid -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8 text-center">
+<div class="label-md font-label uppercase tracking-widest text-primary-container font-semibold mb-4">Our Network</div>
+<h2 class="text-3xl font-headline font-bold mb-16">Global  Partners</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-0.5 bg-outline-variant/20">
+<div class="bg-surface-container-low p-8 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+<span class="text-xl font-bold font-headline">SIEMENS</span>
+</div>
+<div class="bg-surface-container-low p-8 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+<span class="text-xl font-bold font-headline">GE</span>
+</div>
+<div class="bg-surface-container-low p-8 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+<span class="text-xl font-bold font-headline">ABB</span>
+</div>
+<div class="bg-surface-container-low p-8 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+<span class="text-xl font-bold font-headline text-center leading-tight">Rockwell<br/>Automation</span>
+</div>
+<div class="bg-surface-container-low p-8 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+<span class="text-xl font-bold font-headline text-center leading-tight">Schneider<br/>Electric</span>
+</div>
+<div class="bg-surface-container-low p-8 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+<span class="text-xl font-bold font-headline">Emerson</span>
+</div>
+<div class="bg-surface-container-low p-8 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+<span class="text-xl font-bold font-headline">Omron</span>
+</div>
+<div class="bg-surface-container-low p-8 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+<span class="text-xl font-bold font-headline text-center leading-tight">Mitsubishi<br/>Electric</span>
+</div>
+<div class="bg-surface-container-low p-8 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+<span class="text-xl font-bold font-headline">Caterpillar</span>
+</div>
+<div class="bg-surface-container-low p-8 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+<span class="text-xl font-bold font-headline">Honeywell</span>
+</div>
+<div class="bg-surface-container-low p-8 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+<span class="text-xl font-bold font-headline">Yokogawa</span>
+</div>
+<div class="bg-surface-container-low p-8 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+<span class="text-xl font-bold font-headline text-center leading-tight">Endress+<br/>Hauser</span>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<!--<div class="px-10 py-6 border border-primary/20 rounded-full flex items-center gap-4 bg-surface">-->
+<!--<span class="text-on-surface-variant font-medium">Strategic Security Partner:</span>-->
+<!--<span class="text-2xl font-bold font-headline tracking-tighter text-on-surface">SAFER</span>-->
+<!--</div>-->
+</div>
+</div>
+</section>
+<!-- Contact CTA -->
+<section class="py-32 bg-on-surface text-white relative overflow-hidden">
+<div class="absolute inset-0 technical-grid opacity-10"></div>
+<div class="max-w-5xl mx-auto px-8 text-center relative z-10">
+<h2 class="text-5xl md:text-6xl font-headline font-bold mb-8 text-white">Have Questions? Get in touch!</h2>
+<p class="text-xl opacity-70 mb-12 max-w-2xl mx-auto">
+                Consult with our engineering team today to build high-performance systems for your industrial operations.
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+<div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 flex items-center gap-6 text-left">
+<div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="mail">mail</span>
+</div>
+<div>
+<div class="text-sm opacity-60 font-label uppercase tracking-widest">Email Us</div>
+<div class="text-xl font-medium">sales@autech.work</div>
+</div>
+</div>
+<div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 flex items-center gap-6 text-left">
+<div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="call">call</span>
+</div>
+<div>
+<div class="text-sm opacity-60 font-label uppercase tracking-widest">Call Us</div>
+<div class="text-xl font-medium">+967 777 858 276</div>
+</div>
+</div>
+</div>
+<!--<button class="bg-primary text-white text-lg font-bold px-12 py-5 rounded-lg hover:bg-primary-container transition-all scale-100 hover:scale-105 active:scale-95 shadow-xl shadow-primary/10">-->
+<!--                Contact our experts-->
+<!--            </button>-->
+</div>
+</section>
+
+</body>
+{% endblock %}

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AuTech — Sign In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brand: #A31D1D;
+    --brand-dark: #80000a;
+    --brand-light: #EEF4FF;
+    --accent: #E5A93C;
+    --surface: #FFFFFF;
+    --surface-2: #F7F8FA;
+    --border: #E2E5EB;
+    --text-primary: #0D1117;
+    --text-secondary: #5C6370;
+    --text-muted: #9CA3AF;
+    --danger: #DC2626;
+    --success: #16A34A;
+    --radius: 12px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.06);
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.06);
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #F0F2F5;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: var(--text-primary);
+    overflow: hidden;
+  }
+
+  /* ─── Left Panel ─── */
+  .panel-left {
+    background: linear-gradient(145deg, #1A0B0B 0%, #4A1212 50%, #1A0B0B 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .panel-left::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(229,169,60,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .panel-left::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(163,29,29,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo-icon {
+    width: 44px; height: 44px;
+    background: var(--brand);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .logo-icon svg { width: 26px; height: 26px; fill: white; }
+
+  .logo-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.3px;
+  }
+
+  .logo-version {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(229,169,60,0.15);
+    border: 1px solid rgba(229,169,60,0.3);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero-tag span.dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .hero-headline {
+    font-family: 'Sora', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+    margin-bottom: 18px;
+  }
+
+  .hero-headline em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    max-width: 340px;
+    margin-bottom: 40px;
+  }
+
+  .module-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 360px;
+  }
+
+  .module-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 8px;
+    padding: 9px 14px;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.75);
+    font-weight: 500;
+  }
+
+  .module-pill svg { width: 15px; height: 15px; opacity: 0.7; flex-shrink: 0; }
+
+  .panel-footer-left {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── Right Panel ─── */
+  .panel-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    background: white;
+    overflow-y: auto;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .login-header {
+    margin-bottom: 36px;
+  }
+
+  .login-header h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.4px;
+    margin-bottom: 6px;
+  }
+
+  .login-header p {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  /* ─── Alert ─── */
+  .alert-box {
+    display: none;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    margin-bottom: 20px;
+    border: 1px solid;
+  }
+
+  .alert-box.danger {
+    background: #FEF2F2;
+    border-color: #FECACA;
+    color: var(--danger);
+  }
+
+  .alert-box svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; }
+  .alert-box.show { display: flex; }
+
+  /* ─── Form ─── */
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 7px;
+  }
+
+  .input-wrap {
+    position: relative;
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 13px; top: 50%; transform: translateY(-50%);
+    width: 18px; height: 18px;
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: color 0.2s;
+  }
+
+  .toggle-pw {
+    position: absolute;
+    right: 12px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; padding: 0;
+    cursor: pointer; color: var(--text-muted);
+    display: flex; align-items: center;
+    transition: color 0.2s;
+  }
+
+  .toggle-pw:hover { color: var(--text-secondary); }
+
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    width: 100%;
+    height: 44px;
+    padding: 0 40px 0 42px;
+    border: 1.5px solid var(--border);
+    border-radius: 9px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    background: var(--surface);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+  }
+
+  input::placeholder { color: var(--text-muted); }
+
+  input:focus {
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px rgba(163,29,29,0.10);
+  }
+
+  input.error {
+    border-color: var(--danger);
+    box-shadow: 0 0 0 3px rgba(220,38,38,0.08);
+  }
+
+  .form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+
+  .remember-me {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-secondary);
+    user-select: none;
+  }
+
+  .remember-me input[type="checkbox"] {
+    width: 16px; height: 16px;
+    border-radius: 4px;
+    border: 1.5px solid var(--border);
+    padding: 0;
+    cursor: pointer;
+    accent-color: var(--brand);
+  }
+
+  .forgot-link {
+    font-size: 13px;
+    color: var(--brand);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .forgot-link:hover { text-decoration: underline; }
+
+  /* ─── Submit Button ─── */
+  .btn-primary {
+    width: 100%;
+    height: 46px;
+    background: var(--brand);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    box-shadow: 0 2px 8px rgba(163,29,29,0.25);
+  }
+
+  .btn-primary:hover {
+    background: var(--brand-dark);
+    box-shadow: 0 4px 16px rgba(163,29,29,0.35);
+  }
+
+  .btn-primary:active { transform: scale(0.99); }
+  .btn-primary:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+
+  .spinner {
+    display: none;
+    width: 18px; height: 18px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ─── Footer ─── */
+  .login-footer {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .login-footer span { font-size: 12px; color: var(--text-muted); }
+  .login-footer a { font-size: 12px; color: var(--text-secondary); text-decoration: none; }
+  .login-footer a:hover { color: var(--brand); }
+
+  @media (max-width: 768px) {
+    body { grid-template-columns: 1fr; overflow-y: auto; }
+    .panel-left { display: none; }
+    .panel-right { padding: 2rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="panel-left">
+  <div class="logo-area">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        <path fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-name">AuTech</div>
+      <div class="logo-version">VERSION 15</div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      Industrial ERP Workspace
+    </div>
+    <h2 class="hero-headline">
+      Run your entire<br>
+      business on <em>one</em><br>
+      platform.
+    </h2>
+    <p class="hero-sub">
+      From accounting to manufacturing, inventory to distribution — manage every workflow across a single unified interface.
+    </p>
+
+    <div class="module-grid">
+      <div class="module-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+        </svg>
+        Accounting
+      </div>
+      <div class="module-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        Sales & CRM
+      </div>
+      <div class="module-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        HR & Payroll
+      </div>
+      <div class="module-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>
+        </svg>
+        Manufacturing
+      </div>
+      <div class="module-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        </svg>
+        Inventory
+      </div>
+      <div class="module-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>
+        Reports
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-footer-left">
+    &copy; 2026 AuTech for Import & Engineering Services
+  </div>
+</div>
+
+<div class="panel-right">
+  <div class="login-card">
+    <div class="login-header">
+      <h1>Welcome back</h1>
+      <p>Sign in to your corporate workspace</p>
+    </div>
+
+    <div class="alert-box danger" id="alert-error" role="alert">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      <span id="alert-msg">Invalid email or password. Please try again.</span>
+    </div>
+
+    <form id="login-form" novalidate>
+      <div class="form-group">
+        <label for="usr">Email or User ID</label>
+        <div class="input-wrap">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <input type="email" id="usr" name="usr" placeholder="name@company.com" autocomplete="username email" autocapitalize="off" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="pwd">Password</label>
+        <div class="input-wrap">
+          <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <input type="password" id="pwd" name="pwd" placeholder="Enter your password" autocomplete="current-password" required>
+          <button type="button" class="toggle-pw" id="toggle-pw" aria-label="Show or hide password">
+            <svg id="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="remember-me">
+          <input type="checkbox" id="remember" name="remember">
+          Remember me
+        </label>
+        <a href="/update-password" class="forgot-link">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn-primary" id="login-btn">
+        <span id="btn-label">Sign in</span>
+        <div class="spinner" id="spinner"></div>
+      </button>
+    </form>
+
+    <div class="login-footer">
+      <span>&copy; 2026 AuTech</span>
+      <div style="display:flex; gap:16px;">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('login-form');
+  const usrInput = document.getElementById('usr');
+  const pwdInput = document.getElementById('pwd');
+  const loginBtn = document.getElementById('login-btn');
+  const btnLabel = document.getElementById('btn-label');
+  const spinner = document.getElementById('spinner');
+  const alertBox = document.getElementById('alert-error');
+  const alertMsg = document.getElementById('alert-msg');
+  const togglePw = document.getElementById('toggle-pw');
+  const eyeIcon = document.getElementById('eye-icon');
+
+  function showAlert(msg) {
+    alertBox.classList.add('show');
+    alertMsg.textContent = msg;
+  }
+
+  function hideAlert() {
+    alertBox.classList.remove('show');
+  }
+
+  usrInput.addEventListener('input', () => {
+    usrInput.classList.remove('error');
+    hideAlert();
+  });
+  
+  pwdInput.addEventListener('input', () => {
+    pwdInput.classList.remove('error');
+    hideAlert();
+  });
+
+  togglePw.addEventListener('click', () => {
+    const isHidden = pwdInput.type === 'password';
+    pwdInput.type = isHidden ? 'text' : 'password';
+    eyeIcon.innerHTML = isHidden
+      ? '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>'
+      : '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    hideAlert();
+
+    let valid = true;
+    if (!usrInput.value.trim()) { usrInput.classList.add('error'); valid = false; }
+    if (!pwdInput.value.trim()) { pwdInput.classList.add('error'); valid = false; }
+    if (!valid) return;
+
+    loginBtn.disabled = true;
+    btnLabel.textContent = 'Signing in…';
+    spinner.style.display = 'block';
+
+    try {
+      // Fetch safe fallback token wrapper if available window context is absent
+      const csrfToken = (window.frappe && window.frappe.csrf_token) || '';
+      
+      const res = await fetch('/api/method/login', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'X-Frappe-CSRF-Token': csrfToken
+        },
+        body: new URLSearchParams({
+          usr: usrInput.value.trim(),
+          pwd: pwdInput.value,
+          remember_me: document.getElementById('remember').checked ? 1 : 0
+        })
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.message === 'Logged In') {
+        btnLabel.textContent = 'Redirecting…';
+        window.location.href = data.home_page || '/app';
+      } else {
+        showAlert(data.message || 'Invalid email or password. Please try again.');
+        pwdInput.value = '';
+        pwdInput.focus();
+      }
+    } catch (err) {
+      showAlert('Invalid email or password. Please try again.');
+    } finally {
+      loginBtn.disabled = false;
+      btnLabel.textContent = 'Sign in';
+      spinner.style.display = 'none';
+    }
+  });
+});
+</script>
+</body>
+</html>

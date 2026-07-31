@@ -1,0 +1,196 @@
+{% extends "templates/custom_base.html" %}
+
+{% block head %}
+<title>Partners</title>
+{% endblock %}
+
+{% block content %}
+
+<body dir="rtl" class="bg-background font-body text-on-surface">
+
+<!-- Hero Section  py-24 px-8-->
+<header class="text-right relative py-24 px-6 overflow-hidden">
+<div class="absolute inset-0 bg-dot-pattern"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1">
+<span class="font-label text-xs uppercase tracking-widest text-primary font-semibold mb-4 block">منظومة التميز متكاملة</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold text-on-surface tracking-tighter leading-[1.2] mb-8">
+شركاؤنا <br/> <span class="text-primary"> العالميون</span>
+</h1>
+<p class="text-lg text-secondary max-w-xl leading-relaxed">
+نربط الهندسة الصناعية ذات المستويات العالمية بالبنية التحتية في اليمن. نسد الفجوة بين الابتكار العالمي والتنفيذ المحلي من خلال تحالفات فنية وتقنية مباشرة.
+</p>
+</div>
+<div class="flex-1 w-full aspect-video rounded-xl overflow-hidden bg-surface-container shadow-2xl relative group">
+<img alt="Industrial Automation Control Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="high-tech industrial control room with large monitoring screens displaying technical blueprints and automation data in a clean engineering facility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdK3IP-aBg7u596HgXKxC5TY28XqFti3v5xZP8iRqHUF2Wm487WYvauiY0nuX8lLJJaML8CfH6grsZ5roUHlpzA68zrT0UaKNjJ-MOAPMCVpzbkjvTQK8AoHoX1U3H1oLL4SsXaUy5siK1-gJeoeriZAZJSi2ZaQfCf1fBAH_6B4rKZls2VITuV_ciBiYq7DvD_y0zFm-ISrYMobCHoH3UWE_9lVXL9-5j6Uezs6KSBHnU6NjgnspJYemhEUcbQsdgc2BupmciRKk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 to-transparent"></div>
+</div>
+</div>
+</div>
+</header>
+
+<!-- Strategic Partner Section (SAFER) -->
+<!--<section class="bg-surface-container-low py-24 px-8 relative overflow-hidden">-->
+<!--<div class="max-w-7xl mx-auto">-->
+<!--<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">-->
+<!--<div class="lg:col-span-5 order-2 lg:order-1">-->
+<!--<div class="p-8 md:p-12 bg-surface-container-lowest rounded-xl shadow-[0_32px_64px_-16px_rgba(0,0,0,0.05)] border-r-4 border-primary">-->
+<!--<div class="flex items-center gap-4 mb-6">-->
+<!--<span class="material-symbols-outlined text-primary text-4xl" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>-->
+<!--<h2 class="font-headline text-2xl font-bold tracking-tight">شريك أمني إستراتيجي</h2>-->
+<!--</div>-->
+<!--<h3 class="text-3xl font-headline font-bold mb-6 text-on-surface">صافر (SEPOC)</h3>-->
+<!--<p class="text-secondary leading-relaxed mb-8">-->
+<!--بصفتها شريكنا الإستراتيجي الأول والأساسي في اليمن، تمثل شركة صافر لعمليات الاستكشاف والإنتاج (SEPOC) ذروة التعاون والتكامل الصناعي. معاً، نعمل على صيانة البنية التحتية الحيوية للطاقة مع التركيز البالغ على أنظمة الأمن وعالية النزاهة واستمرارية العمليات الكفاءة التشغيلية.-->
+<!--</p>-->
+<!--<div class="space-y-4">-->
+<!--<div class="flex items-center gap-3">-->
+<!--<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>-->
+<!--<span class="font-label text-sm font-medium">حماية البنية التحتية الحيوية والحساسة</span>-->
+<!--</div>-->
+<!--<div class="flex items-center gap-3">-->
+<!--<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>-->
+<!--<span class="font-label text-sm font-medium">تفويض مباشر ومعتمد لسلاسل الإمداد</span>-->
+<!--</div>-->
+<!--<div class="flex items-center gap-3">-->
+<!--<span class="material-symbols-outlined text-primary text-xl" data-icon="check_circle">check_circle</span>-->
+<!--<span class="font-label text-sm font-medium">دعم فني وتقني حصري داخل اليمن</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="lg:col-span-7 order-1 lg:order-2">-->
+<!--<div class="relative">-->
+<!--<div class="absolute -top-8 -left-8 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>-->
+<!--<img alt="Oil Rig Infrastructure" class="rounded-xl shadow-xl w-full h-[400px] object-cover" data-alt="industrial oil and gas processing facility at dusk with metallic pipes and structural engineering details under dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwuIRRlVWLolsjmvW5y-WaMf0E-DgOdgXamMThog0YdIp1pNRFcy2RMlOn9Z2UeTqE-odNLO6pYp9JhoACQm01AEVi64pr5NnhTBRmNp0mwvSzL5bLi1RWEVlXYbQT0su9PiIEP61z5c24uC0kJojRFD7Rf0PyleBNca-7vlWUs8DurTVGUhI5UK-8fFVbrOaNNY5K33xVR0gpevPS5jUaRF_Q4PpBKs5l3aEAoQ0-Cal9AJzapfgptCad8TPbzE7Sv3v-Ku9XC6U"/>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</section>-->
+
+<!-- Technology Ecosystem Bento Grid -->
+<section class="text-right py-24 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline text-4xl font-bold mb-6 tracking-tight">شبكة العلاقات العالمية</h2>
+<p class="text-secondary max-w-2xl mx-auto">نحن نتشارك ونتعاون مع رواد الصناعة العالميين لنضمن توفير مكونات وأنظمة الأتمتة الأكثر موثوقية لعملائنا في المنطقة.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Partner Card: Siemens -->
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-all group">
+<div class="h-12 flex items-center mb-6 grayscale group-hover:grayscale-0 transition-all">
+<span class="font-headline text-2xl font-black text-on-surface/40 group-hover:text-primary transition-colors">SIEMENS</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">الصناعات الرقمية</h4>
+<p class="text-sm text-secondary leading-relaxed">حلول الأتمتة والبرمجيات المتكاملة للصناعات التحويلية والإنتاجية.</p>
+</div>
+<!-- Partner Card: GE -->
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-all group">
+<div class="h-12 flex items-center mb-6 grayscale group-hover:grayscale-0 transition-all">
+<span class="font-headline text-2xl font-black text-on-surface/40 group-hover:text-primary transition-colors">GE</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">الطاقة والقوى المحركة</h4>
+<p class="text-sm text-secondary leading-relaxed">حلول الشبكات المتقدمة وأنظمة التحكم في توليد الطاقة لقطاعات المرافق الحيوية.</p>
+</div>
+<!-- Partner Card: ABB -->
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-all group">
+<div class="h-12 flex items-center mb-6 grayscale group-hover:grayscale-0 transition-all">
+<span class="font-headline text-2xl font-black text-on-surface/40 group-hover:text-primary transition-colors">ABB</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">الروبوتات والأتمتة</h4>
+<p class="text-sm text-secondary leading-relaxed">حلول رائدة للأتمتة المعتمدة على الروبوتات ومكونات البنية التحتية الكهربائية.</p>
+</div>
+<!-- Partner Card: Rockwell -->
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-all group">
+<div class="h-12 flex items-center mb-6 grayscale group-hover:grayscale-0 transition-all">
+<span class="font-headline text-2xl font-black text-on-surface/40 group-hover:text-primary transition-colors">ROCKWELL</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">ألن برادلي (Allen-Bradley)</h4>
+<p class="text-sm text-secondary leading-relaxed">العلامة التجارية الرائدة في الأتمتة الصناعية، مع التركيز على وحدات الـ PLC ومعدات التحكم بالمحركات.</p>
+</div>
+<!-- Partner Card: Schneider -->
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-all group">
+<div class="h-12 flex items-center mb-6 grayscale group-hover:grayscale-0 transition-all">
+<span class="font-headline text-2xl font-black text-on-surface/40 group-hover:text-primary transition-colors">SCHNEIDER</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">إدارة التحكم بالطاقة</h4>
+<p class="text-sm text-secondary leading-relaxed">تعزيز الكفاءة والاستدامة من خلال تقنيات معالجة العمليات وإدارة الطاقة الرائدة عالمياً.</p>
+</div>
+<!-- Partner Card: Emerson -->
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-all group">
+<div class="h-12 flex items-center mb-6 grayscale group-hover:grayscale-0 transition-all">
+<span class="font-headline text-2xl font-black text-on-surface/40 group-hover:text-primary transition-colors">EMERSON</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">حلول الأتمتة والتحكم</h4>
+<p class="text-sm text-secondary leading-relaxed">تحسين الأداء التشغيلي لعمليات البتروكيماويات، النفط والغاز، والتكرير.</p>
+</div>
+<!-- Partner Card: Omron -->
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-all group">
+<div class="h-12 flex items-center mb-6 grayscale group-hover:grayscale-0 transition-all">
+<span class="font-headline text-2xl font-black text-on-surface/40 group-hover:text-primary transition-colors">OMRON</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">الاستشعار والتحكم الفائق</h4>
+<p class="text-sm text-secondary leading-relaxed">تقنيات استشعار دقيقة للغاية وحلول تحكم عالية السرعة في الحركة لخطوط التجميع والإنتاج.</p>
+</div>
+<!-- Partner Card: Mitsubishi -->
+<div class="bg-surface-container-low p-8 rounded-xl hover:bg-surface-container-high transition-all group">
+<div class="h-12 flex items-center mb-6 grayscale group-hover:grayscale-0 transition-all">
+<span class="font-headline text-2xl font-black text-on-surface/40 group-hover:text-primary transition-colors">MITSUBISHI</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">الأتمتة المصنعية الكهربائية</h4>
+<p class="text-sm text-secondary leading-relaxed">حلول أتمتة مصانع قوية ومتكاملة تشمل أنظمة الـ CNC وأنظمة الليزر الصناعية.</p>
+</div>
+</div>
+<!-- Secondary Partners Row -->
+<div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 opacity-70">
+<div class="bg-surface p-4 border border-outline-variant/10 flex justify-center items-center font-headline font-bold text-on-surface-variant">CATERPILLAR</div>
+<div class="bg-surface p-4 border border-outline-variant/10 flex justify-center items-center font-headline font-bold text-on-surface-variant">HONEYWELL</div>
+<div class="bg-surface p-4 border border-outline-variant/10 flex justify-center items-center font-headline font-bold text-on-surface-variant">YOKOGAWA</div>
+<div class="bg-surface p-4 border border-outline-variant/10 flex justify-center items-center font-headline font-bold text-on-surface-variant">ENDRESS+HAUSER</div>
+</div>
+</div>
+</section>
+
+<!-- Become a Partner CTA -->
+<!--<section class="bg-primary-container text-white py-24 px-8 relative overflow-hidden">-->
+<!--<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>-->
+<!--<div class="max-w-4xl mx-auto text-center relative z-10">-->
+<!--<h2 class="font-headline text-4xl md:text-5xl font-bold mb-8">وسّع نطاق وصول تقنياتك داخل اليمن</h2>-->
+<!--<p class="text-on-primary-container text-lg mb-12 max-w-2xl mx-auto">-->
+<!--نحن نبحث دائماً عن مزودي الحلول التكنولوجية الصناعية المبتكرة لتوسيع كتالوجنا الفني. شارك مع أوتيك (AuTech) لتصل إلى قاعدة عملاء محليين قوية وتمثيل فني احترافي متكامل لحلولك وخدماتك.-->
+<!--</p>-->
+<!--<div class="flex flex-wrap justify-center gap-6">-->
+<!--<button class="bg-surface text-primary px-10 py-4 rounded-lg font-bold hover:bg-white transition-all">-->
+<!--تقديم طلب شراكة-->
+<!--</button>-->
+<!--<button class="border-2 border-white/30 px-10 py-4 rounded-lg font-bold hover:bg-white/10 transition-all">-->
+<!--تحميل ملف تعريف الشركاء-->
+<!--</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</section>-->
+
+<!-- Success Stories/Stats -->
+<section class="text-right py-24 px-8 bg-surface-container-highest">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div>
+<div class="text-4xl font-headline font-bold text-primary mb-2">12+</div>
+<div class="font-label text-xs uppercase tracking-widest text-secondary">شركاء تصنيع أصليين عالميين</div>
+</div>
+<div>
+<div class="text-4xl font-headline font-bold text-primary mb-2">500+</div>
+<div class="font-label text-xs uppercase tracking-widest text-secondary">مشروع منجز بنجاح</div>
+</div>
+<div>
+<div class="text-4xl font-headline font-bold text-primary mb-2">24/7</div>
+<div class="font-label text-xs uppercase tracking-widest text-secondary">تنسيق وتواصل فني مباشر على مدار الساعة</div>
+</div>
+</div>
+</div>
+</section>
+
+</body>
+{% endblock %}
