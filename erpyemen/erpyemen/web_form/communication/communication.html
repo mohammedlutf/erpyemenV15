@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="frappe">
+<title>Contact Us</title>
+
+<!-- <link rel="stylesheet" href="/assets/frappe/dist/css/website.bundle.css"> -->
+    
+<style>
+
+body{
+    background:#f5f5f5;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.contact-box{
+    max-width:700px;
+    margin:60px auto;
+    background:#fff;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.contact-box h2{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.contact-box p{
+    text-align:center;
+    color:#777;
+    margin-bottom:35px;
+}
+
+.form-control{
+    margin-bottom:20px;
+}
+
+#status{
+    margin-top:20px;
+    text-align:center;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>Contact Us</h2>
+
+<p>
+We'd love to hear from you.
+Send us a message and we'll reply as soon as possible.
+</p>
+
+<form id="contact-form">
+
+<div class="mb-3">
+
+<label class="form-label">Full Name</label>
+
+<input
+type="text"
+class="form-control"
+id="name"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">Email</label>
+
+<input
+type="email"
+class="form-control"
+id="email"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">Subject</label>
+
+<input
+type="text"
+class="form-control"
+id="subject"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">Message</label>
+
+<textarea
+class="form-control"
+id="message"
+rows="6"
+required></textarea>
+
+</div>
+
+<button
+type="submit"
+class="btn btn-primary w-100 "
+id="submit-btn">
+
+Send Message
+
+</button>
+
+<div id="status"></div>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- <script src="/assets/frappe/dist/js/frappe-web.bundle.js"></script> -->
+<!-- <script src="/assets/erpyemen/js/comm.js"></script> -->
+
+
+</body>
+</html>

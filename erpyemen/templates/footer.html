@@ -1,0 +1,104 @@
+{# Recalculate language environment natively inside the footer context #}
+{% set is_arabic = frappe.request.path.startswith('/ar') %}
+{% set lang_route = '/ar' if is_arabic else '' %}
+
+<footer dir="{{ 'rtl' if is_arabic else 'ltr' }}" class="bg-[#f3f4f5] dark:bg-[#121415] w-full pt-16 pb-8 text-slate-800 dark:text-slate-200">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8">
+        
+        <div class="space-y-6 {{ 'text-right' if is_arabic else 'text-left' }}">
+            <div class="text-xl font-bold font-headline text-[#191c1d] dark:text-[#f8f9fa]">AuTech</div>
+            <p class="text-[#191c1d] dark:text-[#f8f9fa] opacity-60 leading-relaxed text-sm">
+                {{ "حلول هندسية متخصصة وسلاسل إمداد تقنية لأكثر القطاعات الصناعية تطلباً حول العالم." if is_arabic else "Specialized engineering and technical supply chain solutions for the most demanding global industries." }}
+            </p>
+        </div>
+        
+        <div class="{{ 'text-right' if is_arabic else 'text-left' }}">
+            <h4 class="font-headline font-bold mb-6 text-[#191c1d] dark:text-[#f8f9fa]">
+                {{ "روابط سريعة" if is_arabic else "Quick Links" }}
+            </h4>
+            <ul class="space-y-4 text-sm list-none p-0 m-0">
+                <li><a class="no-underline text-[#191c1d] dark:text-[#f8f9fa] opacity-60 hover:opacity-100 hover:text-[#A31D1D] transition-all" href="{{ lang_route if lang_route else '/' }}">{{ "الرئيسية" if is_arabic else "Home" }}</a></li>
+                <li><a class="no-underline text-[#191c1d] dark:text-[#f8f9fa] opacity-60 hover:opacity-100 hover:text-[#A31D1D] transition-all" href="{{ lang_route }}/services">{{ "خدماتنا" if is_arabic else "Services" }}</a></li>
+                <li><a class="no-underline text-[#191c1d] dark:text-[#f8f9fa] opacity-60 hover:opacity-100 hover:text-[#A31D1D] transition-all" href="{{ lang_route }}/clients">{{ "العملاء" if is_arabic else "Clients" }}</a></li>
+                <li><a class="no-underline text-[#191c1d] dark:text-[#f8f9fa] opacity-60 hover:opacity-100 hover:text-[#A31D1D] transition-all" href="/login">{{ "تسجيل الدخول" if is_arabic else "Login" }}</a></li>
+            </ul>
+        </div>
+        
+        <div class="{{ 'text-right' if is_arabic else 'text-left' }}">
+            <h4 class="font-headline font-bold mb-6 text-[#191c1d] dark:text-[#f8f9fa]">
+                {{ "اتصال" if is_arabic else "Contact" }}
+            </h4>
+            <ul class="space-y-4 text-sm list-none p-0 m-0">
+                <li class="text-[#191c1d] dark:text-[#f8f9fa] opacity-60">sales@autech.work</li>
+                <li class="text-[#191c1d] dark:text-[#f8f9fa] opacity-60" dir="ltr">+967 777 858 276</li>
+                <li class="text-[#191c1d] dark:text-[#f8f9fa] opacity-60">{{ "مأرب، اليمن" if is_arabic else "Ma'rib, Yemen" }}</li>
+            </ul>
+        </div>
+        
+        <div class="{{ 'text-right' if is_arabic else 'text-left' }}">
+            <h4 class="font-headline font-bold mb-6 text-[#191c1d] dark:text-[#f8f9fa]">
+                {{ "اشترك معنا" if is_arabic else "Subscribe" }}
+            </h4>
+
+            <div class="flex flex-col gap-4">
+                <input id="newsletterEmail"
+                       class="bg-white dark:bg-[#191c1d] p-3 rounded border border-gray-200 dark:border-gray-800 focus:ring-1 focus:ring-primary-container text-sm text-[#191c1d] dark:text-white {{ 'text-right' if is_arabic else 'text-left' }}"
+                       placeholder="{{ 'البريد الإلكتروني' if is_arabic else 'Email address' }}"
+                       type="email"/>
+
+                <button id="subscribeBtn"
+                        class="bg-[#A31D1D] text-white py-3 rounded text-sm font-medium hover:opacity-95 active:scale-95 transition-all">
+                    {{ "انضم للنشرة البريدية" if is_arabic else "Join Newsletter" }}
+                </button>
+
+                <p id="newsletterMsg" class="text-sm hidden"></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-[#191c1d] dark:text-[#f8f9fa] opacity-60 text-xs tracking-widest">
+        {{ "© 2026 أوتيك للأتمتة الصناعية. جميع الحقوق محفوظة." if is_arabic else "© 2026 AuTech Industrial Automation. All rights reserved." }}
+    </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Injecting string comparison dynamically instead of raw boolean literal bugs
+    const isArabicEnv = "{{ 'true' if is_arabic else 'false' }}" === "true";
+    const emailInput = document.getElementById("newsletterEmail");
+    const btn = document.getElementById("subscribeBtn");
+    const msg = document.getElementById("newsletterMsg");
+
+    function showMessage(text, type) {
+        msg.innerText = text;
+        msg.classList.remove("hidden");
+        if (type === "success") {
+            msg.className = "text-green-600 text-sm font-medium mt-1";
+        } else {
+            msg.className = "text-red-600 text-sm font-medium mt-1";
+        }
+    }
+
+    btn.addEventListener("click", function () {
+        let email = emailInput.value.trim();
+        emailInput.classList.remove("ring-2", "ring-red-500");
+        msg.classList.add("hidden");
+
+        if (!email) {
+            emailInput.classList.add("ring-2", "ring-red-500");
+            showMessage(isArabicEnv ? "الرجاء إدخال البريد الإلكتروني" : "Please enter your email", "error");
+            return;
+        }
+
+        let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!pattern.test(email)) {
+            emailInput.classList.add("ring-2", "ring-red-500");
+            showMessage(isArabicEnv ? "البريد الإلكتروني غير صالح" : "Invalid email address", "error");
+            return;
+        }
+
+        showMessage(isArabicEnv ? "✅ تم الاشتراك بنجاح!" : "✅ Subscribed successfully!", "success");
+        emailInput.value = "";
+    });
+});
+</script>

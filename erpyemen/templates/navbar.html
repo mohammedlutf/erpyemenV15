@@ -1,0 +1,114 @@
+
+  
+  
+  
+  
+  
+  
+  <!-- =================================================== -->
+    <!-- GLOBAL NAVBAR                                       -->
+    <!-- =================================================== -->
+    {% set is_arabic = frappe.request.path.startswith('/ar') %}
+    {% set lang_route = '/ar' if is_arabic else '' %}
+
+    {# Calculates language shift URL relative to the active request context #}
+    {% if is_arabic %}
+        {% set switch_url = frappe.request.path[3:] or '/' %}
+    {% else %}
+        {% set switch_url = '/ar' + (frappe.request.path if frappe.request.path != '/' else '') %}
+    {% endif %}
+
+    <!-- Fixed Nested Nav Layer Bug Resolved Here -->
+    <nav dir="{{ 'rtl' if is_arabic else 'ltr' }}" class="fixed top-0 w-full z-50 bg-[#f8f9fa]/80 dark:bg-[#191c1d]/80 backdrop-blur-md shadow-[0_20px_40px_rgba(25,28,29,0.06)]">
+        <div class="flex {{ 'flex-row-reverse' if is_arabic else 'flex-row' }} justify-between items-center max-w-7xl mx-auto px-8 py-4">
+            
+            <!-- Logo -->
+            <div class="text-2xl font-bold tracking-tighter text-[#191c1d] dark:text-[#f8f9fa] font-headline">
+                AuTech
+            </div>
+
+            <!-- Main Desktop Navigation -->
+            <div class="hidden md:!flex items-center gap-8 font-medium tracking-tight">
+                <a href="{{ lang_route or '/' }}" class="no-underline {% if frappe.request.path in ['/ar', '/ar/', '/'] %}text-[#A31D1D] border-b-2 border-[#A31D1D]{% else %}opacity-70 hover:text-[#A31D1D]{% endif %} pb-1">
+                    {{ "الرئيسية" if is_arabic else "Home" }}
+                </a>
+                
+                <a href="{{ lang_route }}/services" class="no-underline {% if frappe.request.path.startswith(lang_route + '/services') %}text-[#A31D1D] border-b-2 border-[#A31D1D]{% else %}opacity-70 hover:text-[#A31D1D]{% endif %} pb-1">
+                    {{ "خدماتنا" if is_arabic else "Services" }}
+                </a>
+                
+                <a href="{{ lang_route }}/clients" class="no-underline {% if frappe.request.path.startswith(lang_route + '/clients') %}text-[#A31D1D] border-b-2 border-[#A31D1D]{% else %}opacity-70 hover:text-[#A31D1D]{% endif %} pb-1">
+                    {{ "العملاء" if is_arabic else "Clients" }}
+                </a>
+                
+                <a href="{{ lang_route }}/about" class="no-underline {% if frappe.request.path.startswith(lang_route + '/about') %}text-[#A31D1D] border-b-2 border-[#A31D1D]{% else %}opacity-70 hover:text-[#A31D1D]{% endif %} pb-1">
+                    {{ "من نحن" if is_arabic else "About" }}
+                </a>
+                
+                <a href="{{ lang_route }}/contact" class="no-underline {% if frappe.request.path.startswith(lang_route + '/contact') %}text-[#A31D1D] border-b-2 border-[#A31D1D]{% else %}opacity-70 hover:text-[#A31D1D]{% endif %} pb-1">
+                    {{ "اتصل بنا" if is_arabic else "Contact" }}
+                </a>
+            </div>
+
+            <!-- Global Action Options -->
+            <div class="flex items-center gap-4">
+                <!-- Language Switcher Option -->
+                <a href="{{ switch_url }}" class="no-underline border border-[#191c1d]/20 dark:border-[#f8f9fa]/20 text-[#191c1d] dark:text-[#f8f9fa] px-4 py-2 rounded-md text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+                    {{ "English" if is_arabic else "العربية" }}
+                </a>
+
+                <!-- Proposal Button Layout -->
+                <a href="{{ lang_route }}/contact" class="hidden sm:!block no-underline bg-[#A31D1D] text-white px-6 py-2.5 rounded-md font-medium text-sm hover:opacity-90 active:scale-95 transition-all">
+                    {{ "اطلب تسعيرة" if is_arabic else "Get a Quote" }}
+                </a>
+                
+                <!-- Menu Toggle Button -->
+                <button id="mobile-menu-button" class="md:hidden text-[#191c1d] dark:text-[#f8f9fa] focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer View -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#f8f9fa] dark:bg-[#191c1d] border-t dark:border-gray-800">
+            <div class="flex flex-col space-y-4 px-8 py-6 font-medium">
+                <a href="{{ lang_route or '/' }}" class="text-lg {% if frappe.request.path in ['/ar', '/ar/', '/'] %}text-[#A31D1D]{% else %}opacity-70{% endif %}">
+                    {{ "الرئيسية" if is_arabic else "Home" }}
+                </a>
+                <a href="{{ lang_route }}/services" class="text-lg {% if frappe.request.path.startswith(lang_route + '/services') %}text-[#A31D1D]{% else %}opacity-70{% endif %}">
+                    {{ "خدماتنا" if is_arabic else "Services" }}
+                </a>
+                <a href="{{ lang_route }}/clients" class="text-lg {% if frappe.request.path.startswith(lang_route + '/clients') %}text-[#A31D1D]{% else %}opacity-70{% endif %}">
+                    {{ "العملاء" if is_arabic else "Clients" }}
+                </a>
+                <a href="{{ lang_route }}/about" class="text-lg {% if frappe.request.path.startswith(lang_route + '/about') %}text-[#A31D1D]{% else %}opacity-70{% endif %}">
+                    {{ "من نحن" if is_arabic else "About" }}
+                </a>
+                <a href="{{ lang_route }}/contact" class="text-lg {% if frappe.request.path.startswith(lang_route + '/contact') %}text-[#A31D1D]{% else %}opacity-70{% endif %}">
+                    {{ "اتصل بنا" if is_arabic else "Contact" }}
+                </a>
+                <a href="{{ lang_route }}/contact" class="sm:hidden block text-center no-underline bg-[#A31D1D] text-white px-6 py-3 rounded-md font-medium">
+                    {{ "اطلب تسعيرة" if is_arabic else "Get a Quote" }}
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                icon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+    </script>
+
+    

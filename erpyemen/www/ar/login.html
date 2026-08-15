@@ -1,0 +1,137 @@
+{% extends "templates/web.html" %}
+
+<!-- 1. Explicitly pull in your global styles to override default frappe views -->
+{% block head_include %}
+    <!-- Tailwind Play CDN Config -->
+     <link rel="icon" type="image/png" href="/assets/erpyemen/website/images/AuTech_Logo_favicon.png">
+<link rel="shortcut icon" href="/assets/erpyemen/website/images/AuTech_Logo_favicon.png" type="">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-container": "#a31d1d",
+                "primary": "#80000a",
+                "surface": "#f8f9fa",
+                "on-surface": "#191c1d"
+            },
+            "fontFamily": {
+                "headline": ["Space Grotesk"], "body": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+    {{ include_style('login.bundle.css') }}
+{% endblock %}
+
+<!-- 2. FORCE YOUR SYSTEM NAVBAR RIGHT ON TOP -->
+
+{% block navbar %}
+    {% include "erpyemen/templates/navbar.html" %}
+{% endblock %}
+
+{% macro email_login_body() -%}
+{% if not disable_user_pass_login or (ldap_settings and ldap_settings.enabled) %}
+<div class="space-y-4 text-left">
+    <!-- Email Input -->
+    <div>
+        <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400  tracking-wider mb-2" for="login_email">{{ login_label or _("البريد الإلكتروني")}}</label>
+        <input type="text" id="login_email" class="appearance-none block w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-transparent placeholder-gray-400 text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#A31D1D] focus:border-[#A31D1D] transition-all text-sm"
+            placeholder="{% if login_name_placeholder %}{{ login_name_placeholder }}{% else %}{{ _('name@company.com') }}{% endif %}"
+            required autofocus autocomplete="username">
+    </div>
+
+    <!-- Password Input -->
+    <div>
+        <div class="flex justify-between items-center mb-2">
+            <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400  tracking-wider" for="login_password">{{ _("كلمة المرور") }}</label>
+            {% if not disable_user_pass_login %}
+            <a href="#forgot" class="text-xs font-medium text-[#A31D1D] hover:underline">{{ _("هل نسيت كلمة المرور؟") }}</a>
+            {% endif %}
+        </div>
+        <div class="relative flex items-center">
+            <input type="password" id="login_password" class="appearance-none block w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-transparent placeholder-gray-400 text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#A31D1D] focus:border-[#A31D1D] transition-all text-sm w-full" placeholder="••••••••"
+                autocomplete="current-password" required>
+            <span toggle="#login_password" class="toggle-password absolute right-4 text-xs font-medium text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 cursor-pointer select-none">{{ _('إظهار') }}</span>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="mt-6 space-y-3">
+    {% if not disable_user_pass_login %}
+    
+    <button class="btn-login  w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#A31D1D] hover:bg-[#80000a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#A31D1D] transition-all transform active:scale-[0.98]" type="submit">
+        {{ _("تسجيل الدخول") }}
+    </button>
+    {% endif %}
+</div>
+{% endmacro %}
+
+
+{% macro logo_section(title=null) %}
+<div class="text-center mb-8">
+    <h2 class="font-headline text-4xl font-bold tracking-tight text-[#191c1d] dark:text-[#f8f9fa]">
+        AuTech
+    </h2>
+    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+        {% if title %}{{ _(title) }}{% else %}{{ _('سجل دخولك إلى لوحة التحكم الصناعية') }}{% endif %}
+    </p>
+</div>
+{% endmacro %}
+
+
+<!-- 3. USE FRAPPE'S STANDARD page_content CORNERSTONE -->
+{% block page_content %}
+<div class="w-full  min-h-[80vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 bg-[#f8f9fa] dark:bg-[#191c1d]">
+    <div class="max-w-md w-full bg-white dark:bg-[#121415] p-10 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-gray-100 dark:border-gray-800 transition-all">
+        <div class="page-card-actions mb-4 text-sm empty:hidden"></div>
+        <!-- Main Login Section -->
+        <section class='for-login space-y-6'>
+            {{ logo_section() }}
+            <form class="form-signin form-login" role="form">
+                {%- if social_login or login_with_email_link -%}
+                    {{ email_login_body() }}
+                {%- else -%}
+                    {{ email_login_body() }}
+                {%- endif -%}
+            </form>
+        </section>
+
+        <!-- Forgot Password Section -->
+        <section class='for-forgot  space-y-6'>
+            {{ logo_section('نسيت كلمة المرور') }}
+            <form class="form-signin form-forgot space-y-4" role="form">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-2" for="forgot_email">{{ _('عنوان البريد الإلكتروني') }}</label>
+                    <input type="email" id="forgot_email" class="appearance-none block w-full px-4 py-3 border border-gray-200 dark:border-gray-700 bg-transparent placeholder-gray-400 text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#A31D1D] focus:border-[#A31D1D] transition-all text-sm" placeholder="name@company.com" required autocomplete="username">
+                </div>
+                <div class="pt-2 space-y-3">
+                    <button class="btn-forgot w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#A31D1D] hover:bg-[#80000a] transition-all" type="submit">
+                        {{ _("إعادة تعيين كلمة المرور") }}
+                    </button>
+                    <div class="text-center text-sm"><a href="#login" class="text-gray-500 hover:underline">{{ _("العودة لتسجيل الدخول") }}</a></div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+
+
+{% block footer %}
+    {% include "erpyemen/templates/footer.html" %}
+{% endblock %}
+
+
+
+
+{% block script %}
+<script>{% include "templates/includes/login/login.js" %}</script>
+{% endblock %}
+
+{% block sidebar %}{% endblock %}

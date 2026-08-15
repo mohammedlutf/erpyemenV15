@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<!--<link rel="icon" type="image/png" sizes="32x32" href="/files/AuTech_Logo.png?v=3">-->
+<link rel="shortcut icon" href="/files/AuTech_Logo.png?v=3">
+<link rel="apple-touch-icon" href="/files/AuTech_Logo.png?v=3">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#93ccff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#cce5ff",
+                    "on-tertiary-fixed": "#001d31",
+                    "primary-container": "#a31d1d",
+                    "secondary": "#516169",
+                    "tertiary": "#004064",
+                    "on-background": "#191c1d",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#b22926",
+                    "error": "#ba1a1a",
+                    "surface-container": "#edeeef",
+                    "on-tertiary-container": "#96cdff",
+                    "on-tertiary-fixed-variant": "#004b73",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-primary-fixed-variant": "#900c12",
+                    "primary": "#80000a",
+                    "outline": "#8e706d",
+                    "on-secondary-fixed-variant": "#3a4951",
+                    "surface-dim": "#d9dadb",
+                    "on-surface": "#191c1d",
+                    "surface-container-high": "#e7e8e9",
+                    "on-surface-variant": "#5a413e",
+                    "surface-container-low": "#f3f4f5",
+                    "primary-fixed": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "surface": "#f8f9fa",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "outline-variant": "#e2beba",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#005887",
+                    "secondary-fixed": "#d5e5ef",
+                    "inverse-primary": "#ffb4ac",
+                    "background": "#f8f9fa",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f8f9fa",
+                    "surface-variant": "#e1e3e4",
+                    "on-primary-fixed": "#410002",
+                    "secondary-fixed-dim": "#b9c9d3",
+                    "on-secondary-fixed": "#0e1d25",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#55656d",
+                    "primary-fixed-dim": "#ffb4ac",
+                    "secondary-container": "#d2e2ec",
+                    "on-primary-container": "#ffb6ae",
+                    "inverse-surface": "#2e3132"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Work Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+/*        body {*/
+/*    padding-top: 80px; */
+/*}*/
+
+/* Fix for ERPNext's default link behavior */
+.md\:\!flex a {
+    text-decoration: none !important;
+}
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .technical-grid {
+            background-image: radial-gradient(#8e706d 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        
+        
+    </style>
+<title>Contact Us</title>
+
+
+   <script>
+		window.frappe = {};
+		frappe.ready_events = [];
+		frappe.ready = function(fn) {
+			frappe.ready_events.push(fn);
+		}
+		window.dev_server = {{ dev_server }};
+		window.socketio_port = {{ (frappe.socketio_port or 9000) }};
+		window.show_language_picker = {{ show_language_picker or 'false' }};
+	</script>
+
+<style>
+.input-error {
+  border-bottom: 2px solid #e11d48 !important;
+}
+
+.error-text {
+  color: #e11d48;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+#form-message {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.success-msg {
+  color: #16a34a;
+}
+
+.error-msg {
+  color: #dc2626;
+}
+
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+</style>
+</head>
+
+<body frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}" data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} frappe-content-type="markdown" {%- endif %} class="{{ body_class or ''}}>
+<!-- Hero Header Section py-24-->
+<section class="relative py-24  overflow-hidden bg-surface">
+<div class="absolute inset-0 technical-grid"></div>
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary font-label text-xs font-bold tracking-widest uppercase mb-4">Industrial Connectivity</span>
+<h1 class="text-6xl md:text-7xl font-headline font-bold text-on-surface tracking-tighter leading-none mb-6">
+                            Precision <span class="text-primary">Contact.</span>
+</h1>
+<p class="text-lg text-secondary font-body max-w-lg leading-relaxed">
+                            Connect with our engineering team for specialized industrial automation solutions, technical support, and partnership inquiries.
+                        </p>
+</div>
+<div class="hidden lg:block w-48 h-48 border-t-2 border-r-2 border-primary/20 relative">
+<div class="absolute top-4 right-4 text-primary font-label text-sm font-bold">SYS.COORD: 15.46 / 45.32</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<section class="pb-24 px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Contact Form Section -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 shadow-sm rounded-xl border border-outline-variant/10">
+<h2 class="text-3xl font-headline font-bold mb-8 text-on-surface">Submit Inquiry</h2>
+
+<form id="contactForm" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-secondary tracking-wider uppercase">Full Name</label>
+<input id="full_name" name="full_name" class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:ring-0 py-3 transition-colors placeholder:text-slate-400" placeholder="John Doe" type="text"/>
+<div id="error_full_name" class="error-text"></div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-secondary tracking-wider uppercase">Email Address</label>
+<input id="email" name="email" class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:ring-0 py-3 transition-colors placeholder:text-slate-400" placeholder="j.doe@company.com" type="email"/>
+<div id="error_email" class="error-text"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-secondary tracking-wider uppercase">Company</label>
+<input id="company" name="company" class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:ring-0 py-3 transition-colors placeholder:text-slate-400" placeholder="Industrial Corp" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-secondary tracking-wider uppercase">Request Type</label>
+<select id="request_type" name="request_type" class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:ring-0 py-3 transition-colors">
+<option>Product Enquiry</option>
+<option>Request For Information</option>
+<option>Suggestions</option>
+<option>Other</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-secondary tracking-wider uppercase">Technical Requirements</label>
+<textarea id="requirement" name="requirement" class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:ring-0 py-3 transition-colors placeholder:text-slate-400" placeholder="Describe your project or industrial automation needs..." rows="4"></textarea>
+<div id="form-message"></div>
+</div>
+<div class="flex items-center justify-between pt-4">
+<div class="flex items-center gap-2 text-secondary text-sm">
+<span class="material-symbols-outlined text-primary text-lg">verified_user</span>
+<span class="font-body">Secure Technical Gateway</span>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-4 py-2 rounded-lg font-headline font-bold flex items-center gap-3 transition-all transform hover:translate-y-[-2px] hover:shadow-lg" type="submit">
+                                Initialize Inquiry
+                                <span class="material-symbols-outlined ">send</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Contact Details & Map Section -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Info Cards -->
+<div class="grid grid-cols-1 gap-4">
+<div class="group bg-surface-container-low p-6 rounded-xl border-l-4 border-primary transition-all hover:bg-surface-container">
+<div class="flex gap-5">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="font-label text-xs font-bold text-secondary uppercase tracking-widest mb-1">Direct Communication</p>
+<a class="text-xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors" href="mailto:sales@autech.work">sales@autech.work</a>
+</div>
+</div>
+</div>
+<div class="group bg-surface-container-low p-6 rounded-xl border-l-4 border-primary transition-all hover:bg-surface-container">
+<div class="flex gap-5">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="font-label text-xs font-bold text-secondary uppercase tracking-widest mb-1">Inquiry Hotline</p>
+<a class="text-xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors" href="tel:+967777770602">+967 777 770 602</a>
+</div>
+</div>
+</div>
+<div class="group bg-surface-container-low p-6 rounded-xl border-l-4 border-primary transition-all hover:bg-surface-container">
+<div class="flex gap-5">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="font-label text-xs font-bold text-secondary uppercase tracking-widest mb-1">Headquarters</p>
+<p class="text-xl font-headline font-bold text-on-surface">Ma'rib - Alraodhah - Forty Street</p>
+<p class="text-secondary text-sm font-body">Republic of Yemen</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Integration -->
+<div class="relative rounded-xl overflow-hidden h-[340px] shadow-sm border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="Modern satellite topographical map of Ma'rib region in Yemen with red technical line overlays and coordinate markers" data-location="Ma'rib, Yemen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR8HpZ0TCBx6rnqP0NDZQdeejQp1p9PnoXRbXxs1EKK-nTZfDzAdiuLIjD1M_QhyzLVAIiZBQLRiN3Ge5B-98i1bDPAccvjNpTTbgwVxcmkiseAHF1oWmSbuamfm_3gxmgNrBiUHl97lCxQ2CKs0wcWyBe2RJKgg7BTHlm2ye-reDge0grQImzDrNEB3wIkkBeaYOwxGYsM8ozITkURDk6xQQ0k7oPVZcl5TxPtZl-aeL--xbbL0ZI0HyEfFjWYphmuzpqHP8SslI"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+<div class="absolute top-6 left-6 bg-surface-container-lowest/90 glass-nav p-4 rounded-lg shadow-xl max-w-[200px]">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="font-label text-[10px] font-bold uppercase text-on-surface">Live Office Hub</span>
+</div>
+<p class="font-headline font-bold text-sm text-on-surface">AuTech Engineering Center</p>
+</div>
+<div class="absolute bottom-6 right-6">
+<button class="bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">directions</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Global Presence Section -->
+<section class="bg-surface-container-low py-16 border-y border-outline-variant/10">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<div class="font-label text-xs">
+<div class="font-bold text-on-surface">SERVICE HOURS</div>
+<div class="text-secondary">08:00 - 18:00 AST</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">public</span>
+<div class="font-label text-xs">
+<div class="font-bold text-on-surface">GLOBAL REGION</div>
+<div class="text-secondary">Middle East (MENA)</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">shield</span>
+<div class="font-label text-xs">
+<div class="font-bold text-on-surface">COMPLIANCE</div>
+<div class="text-secondary">ISO 9001 Certified</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("contactForm");
+  const submitBtn = form.querySelector("button[type='submit']");
+  const messageBox = document.getElementById("form-message");
+
+  let isSubmitting = false;
+
+  function setError(id, msg) {
+    const input = document.getElementById(id);
+    const error = document.getElementById("error_" + id);
+
+    if (input) input.classList.add("input-error");
+    if (error) error.innerText = msg;
+  }
+
+  function clearErrors() {
+    ["full_name", "email", "requirement"].forEach(id => {
+      const input = document.getElementById(id);
+      const error = document.getElementById("error_" + id);
+
+      if (input) input.classList.remove("input-error");
+      if (error) error.innerText = "";
+    });
+  }
+
+  function showMessage(text, type) {
+    messageBox.innerText = text;
+    messageBox.className = type === "success" ? "success-msg" : "error-msg";
+  }
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    if (isSubmitting) return;
+
+    isSubmitting = true;
+    submitBtn.disabled = true;
+    submitBtn.classList.add("loading");
+
+    clearErrors();
+    showMessage("", "");
+
+    let formData = new FormData(form);
+
+    let full_name = formData.get("full_name");
+    let email = formData.get("email");
+    let company = formData.get("company");
+    let request_type = formData.get("request_type");
+    let message = formData.get("requirement");
+    let content = `
+        <b>Full Name:</b> ${full_name}<br>
+        <b>Email:</b> ${email}<br>
+        <b>Company:</b> ${company || "-"}<br>
+        <b>Request Type:</b> ${request_type}<br><br>
+
+        <b>Message:</b><br>
+        ${message.replace(/\n/g, "<br>")}
+        `;
+    let hasError = false;
+
+    // VALIDATION
+    if (!full_name || full_name.trim() === "") {
+      setError("full_name", "Full name is required");
+      hasError = true;
+    }
+
+    if (!email || email.trim() === "") {
+      setError("email", "Email is required");
+      hasError = true;
+    }
+
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email && !emailPattern.test(email)) {
+      setError("email", "Invalid email format");
+      hasError = true;
+    }
+
+    if (!message || message.trim() === "") {
+      setError("requirement", "Please enter your requirement");
+      hasError = true;
+    }
+
+    if (hasError) {
+      isSubmitting = false;
+      submitBtn.disabled = false;
+      submitBtn.classList.remove("loading");
+      return;
+    }
+
+    
+
+
+        // CREATE LEAD
+        return fetch("/api/resource/Communication", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Frappe-CSRF-Token": frappe.csrf_token
+          },
+          body: JSON.stringify({
+            communication_type: "Communication",
+            communication_medium: "Email",
+            sent_or_received: "Received",
+            sender:email,
+            sender_full_name: email,
+            subject:"New Message from Website Contact Page",
+            content:content,
+            status:"Open",
+          })
+        })
+
+
+    
+
+
+    .then(() => {
+      showMessage("✅ Inquiry submitted successfully!", "success");
+      form.reset();
+    })
+    .catch(err => {
+      showMessage("❌ Failed to submit. Please try again.", "error");
+      console.error(err);
+    })
+    .finally(() => {
+      isSubmitting = false;
+      submitBtn.disabled = false;
+      submitBtn.classList.remove("loading");
+    });
+
+  });
+
+});
+</script>
+<script>
+		frappe.boot = {{ boot | json }}
+		// for backward compatibility of some libs
+		frappe.sys_defaults = frappe.boot.sysdefaults;
+	</script>
+	{{ include_script('frappe-web.bundle.js') }}
+	<script>frappe.csrf_token = "{{ frappe.session.csrf_token }}";</script>
+</body>
+</html>

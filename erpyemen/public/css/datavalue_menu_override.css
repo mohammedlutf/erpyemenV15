@@ -1,0 +1,43 @@
+/* ==========================================
+   DataValue Side Menu - Hover Submenu
+   ========================================== */
+
+/* Side menu must allow the submenu to appear */
+.side-menu {
+    position: relative;
+    overflow: visible !important;
+}
+
+.side-menu .side-menu-icons {
+    position: relative;
+    z-index: 1000;
+}
+
+/* The menu content */
+.side-menu .side-menu-items {
+    z-index: 1100;
+}
+
+/* Smooth submenu */
+.side-menu .side-menu-items > ul.dropdown-list {
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+/* Arabic */
+html[lang="ar"] .side-menu .side-menu-items {
+    right: 70px;
+    left: auto;
+}
+
+/* English */
+html[lang="en"] .side-menu .side-menu-items {
+    left: 70px;
+    right: auto;
+}
+
+/* Keep submenu visible while hovering either icon or submenu */
+.side-menu .side-menu-icons > ul > li:hover ~ .side-menu-items,
+.side-menu .side-menu-items:hover {
+    visibility: visible;
+    opacity: 1;
+}

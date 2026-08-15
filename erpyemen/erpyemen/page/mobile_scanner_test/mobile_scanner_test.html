@@ -1,0 +1,90 @@
+<div id="mobile-scanner-app" class="scanner-container p-2">
+    <!-- Header -->
+    <div class="scanner-header card shadow-sm p-3 mb-3 bg-white rounded">
+        <div class="d-flex justify-content-between align-items-center">
+            <h4 class="m-0 font-weight-bold text-primary">Mobile Stock Counter</h4>
+            <span id="sync-status-badge" class="badge badge-success">Online</span>
+        </div>
+        <div class="row mt-2">
+            <div class="col-6">
+                <small class="text-muted">Session</small>
+                <div id="active-session-display" class="font-weight-bold">--</div>
+            </div>
+            <div class="col-6">
+                <small class="text-muted">Warehouse</small>
+                <div id="active-warehouse-display" class="font-weight-bold">--</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scan Control & Camera Toggle Box -->
+    <div class="card p-3 mb-3">
+        <div class="input-group input-group-lg mb-2">
+            <input type="text" id="barcode-input" class="form-control" placeholder="Scan or enter Barcode / Item Code..." autofocus autocomplete="off">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" id="btn-manual-search">Search</button>
+            </div>
+        </div>
+        
+        <!-- Phone Camera Toggle Button -->
+        <button id="btn-toggle-camera" class="btn btn-outline-info btn-block font-weight-bold">
+            📷 Open Phone Camera Scanner
+        </button>
+
+        <!-- HTML5 Camera Viewfinder Box -->
+        <div id="camera-reader-wrapper" class="mt-3 text-center d-none">
+            <div id="camera-reader" style="width: 100%; max-width: 500px; margin: 0 auto; border: 2px dashed #007bff; border-radius: 8px;"></div>
+            <button id="btn-stop-camera" class="btn btn-sm btn-danger mt-2">Close Camera</button>
+        </div>
+    </div>
+
+    <!-- Item Details Card -->
+    <div id="item-details-card" class="card p-3 shadow-sm d-none">
+        <div class="text-center mb-2">
+            <img id="item-image-preview" src="" class="img-fluid rounded border" style="max-height: 120px; display:none;" />
+        </div>
+        <h5 id="disp-item-name" class="text-dark font-weight-bold m-0"></h5>
+        <p id="disp-item-code" class="text-muted small mb-2"></p>
+        
+        <!-- System Qty (Masked if Blind Count) -->
+        <div id="system-qty-wrapper" class="alert alert-info py-1 px-2 d-none">
+            System ERP Qty: <strong id="disp-system-qty">--</strong>
+        </div>
+
+        <hr class="my-2">
+
+        <!-- Entry Form -->
+        <div class="form-group">
+            <label class="font-weight-bold">Counted Quantity</label>
+            <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary btn-step-down" type="button">-</button>
+                </div>
+                <input type="number" step="any" id="counted-qty-input" class="form-control text-center font-weight-bold" value="1.0">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary btn-step-up" type="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="font-weight-bold">Unit of Measure (UOM)</label>
+            <select id="uom-selector" class="form-control form-control-lg"></select>
+        </div>
+
+        <div id="batch-serial-wrapper" class="d-none">
+            <div class="form-group">
+                <label>Batch Number</label>
+                <input type="text" id="batch-input" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Serial Number</label>
+                <input type="text" id="serial-input" class="form-control">
+            </div>
+        </div>
+
+        <button id="btn-submit-count" class="btn btn-success btn-lg btn-block mt-3 font-weight-bold">
+            SAVE & SCAN NEXT
+        </button>
+    </div>
+</div>

@@ -1,0 +1,250 @@
+/* AuTech Theme - Dark Mode */
+
+:root.dark-mode {
+    --primary: #4d8bf7;
+    --primary-hover: #6b9ff8;
+    --sidebar-bg: #1e1e2f;
+    --sidebar-text: #e0e0e0;
+    --sidebar-active: #4d8bf7;
+    --navbar-bg: #1e1e2f;
+    --page-bg: #12121a;
+    --card-bg: #2a2a3a;
+    --border-color: #3a3a4a;
+    --text-color: #e8e8e8;
+    --muted-text: #9a9aae;
+    --scrollbar-track: #2a2a3a;
+    --scrollbar-thumb: #4a4a5a;
+}
+
+/* Dark mode specific overrides */
+:root.dark-mode .autech-sidebar {
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .autech-sidebar-header {
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .autech-navbar {
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .autech-sidebar-menu .menu-item:hover {
+    background-color: rgba(77, 139, 247, 0.1);
+}
+
+:root.dark-mode .autech-sidebar-menu .menu-item.active {
+    background-color: rgba(77, 139, 247, 0.15);
+}
+
+:root.dark-mode .autech-navbar-search {
+    background-color: var(--page-bg);
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .autech-navbar-search input {
+    color: var(--text-color);
+}
+
+:root.dark-mode .autech-navbar-search input::placeholder {
+    color: var(--muted-text);
+}
+
+:root.dark-mode .navbar-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+:root.dark-mode .language-dropdown {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .language-dropdown button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+:root.dark-mode .language-dropdown button.active {
+    background-color: rgba(77, 139, 247, 0.1);
+}
+
+:root.dark-mode .autech-card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .autech-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+:root.dark-mode .menu-item .menu-icon {
+    color: var(--muted-text);
+}
+
+:root.dark-mode .menu-item.active .menu-icon {
+    color: var(--primary);
+}
+
+:root.dark-mode .menu-item .menu-chevron {
+    color: var(--muted-text);
+}
+
+:root.dark-mode .autech-sidebar-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Dark mode scrollbar */
+:root.dark-mode ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+:root.dark-mode ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+}
+
+:root.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: #5a5a6a;
+}
+
+/* Dark mode form elements */
+:root.dark-mode .form-control,
+:root.dark-mode .input-group-text {
+    background-color: var(--page-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+:root.dark-mode .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(77, 139, 247, 0.15);
+}
+
+:root.dark-mode .form-control::placeholder {
+    color: var(--muted-text);
+}
+
+:root.dark-mode select.form-control {
+    background-color: var(--page-bg);
+    color: var(--text-color);
+}
+
+/* Dark mode tables */
+:root.dark-mode .table {
+    color: var(--text-color);
+}
+
+:root.dark-mode .table thead th {
+    border-color: var(--border-color);
+    background-color: var(--page-bg);
+}
+
+:root.dark-mode .table td,
+:root.dark-mode .table th {
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Dark mode buttons */
+:root.dark-mode .btn-secondary {
+    background-color: var(--border-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+:root.dark-mode .btn-secondary:hover {
+    background-color: #4a4a5a;
+    border-color: #4a4a5a;
+}
+
+:root.dark-mode .btn-outline-secondary {
+    color: var(--muted-text);
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .btn-outline-secondary:hover {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+/* Dark mode dropdowns */
+:root.dark-mode .dropdown-menu {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .dropdown-item {
+    color: var(--text-color);
+}
+
+:root.dark-mode .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+:root.dark-mode .dropdown-divider {
+    border-color: var(--border-color);
+}
+
+/* Dark mode alerts */
+:root.dark-mode .alert {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+/* Dark mode modals */
+:root.dark-mode .modal-content {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .modal-header {
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .modal-footer {
+    border-color: var(--border-color);
+}
+
+/* Dark mode tooltips */
+:root.dark-mode .tooltip-inner {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+/* Dark mode popovers */
+:root.dark-mode .popover {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .popover-header {
+    background-color: var(--page-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+/* Dark mode list views */
+:root.dark-mode .list-item {
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .list-item:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+:root.dark-mode .list-item__content {
+    color: var(--text-color);
+}
+
+/* Dark mode filters */
+:root.dark-mode .filter-rule {
+    border-color: var(--border-color);
+}
+
+:root.dark-mode .filter-rule select,
+:root.dark-mode .filter-rule input {
+    background-color: var(--page-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}

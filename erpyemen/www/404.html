@@ -1,0 +1,45 @@
+{% extends "templates/custom_base.html" %}
+
+{# 1. Detect active language layout variant #}
+{% set is_arabic = frappe.request.path.startswith('/ar') %}
+{% set lang_route = '/ar' if is_arabic else '' %}
+
+{% block head %}
+    <title>{{ _("الصفحة غير موجودة") if is_arabic else _("Page Not Found") }}</title>
+{% endblock %}
+
+{% block content %}
+<!-- 2. Embedded direction and conditional dynamic alignment hooks -->
+<div dir="{{ 'rtl' if is_arabic else 'ltr' }}" class="w-full min-h-[85vh] flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-[#f8f9fa] dark:bg-[#191c1d]">
+    <div class="max-w-xl w-full text-center space-y-8 flex flex-col items-center justify-center">
+        
+        <!-- Fixed Text Content Section -->
+        <div class="space-y-4 w-full {{ 'text-right' if is_arabic else 'text-left' }}">
+            <h1 class="font-headline text-4xl md:text-6xl font-bold tracking-tight text-[#191c1d] dark:text-[#f8f9fa] leading-tight text-center">
+                {{ _("عذراً! لم نتمكن من العثور على هذه الصفحة.") if is_arabic else _("Oops! We lost that page.") }}
+            </h1>
+            <p class="max-w-lg mx-auto text-base text-gray-600 dark:text-gray-400 text-center">
+                {{ _("يبدو أننا لا نستطيع العثور على الصفحة التي تبحث عنها. قد تكون قد نُقلت، أو حُذفت، أو أنها لم تكن موجودة في الأساس. لا تقلق، فلنعد بك إلى المكان الصحيح.") if is_arabic else _("We can't seem to find the page you're looking for. It might have been moved, deleted, or perhaps it never existed. Don't worry, let's get you back to a safe space.") }}
+            </p>
+        </div>
+    
+        <!-- Action Buttons Section -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2 w-full max-w-md mx-auto">
+            <a href="{{ lang_route if lang_route else '/' }}" class="btn-home inline-flex w-full sm:w-auto justify-center items-center gap-2 py-3.5 px-8 text-sm font-semibold rounded-md text-white bg-[#A31D1D] hover:bg-[#80000a] transition-all transform hover:-translate-y-0.5 active:scale-[0.98] shadow-sm hover:shadow-lg hover:shadow-red-900/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="{{ 'rotate-180' if is_arabic else '' }}"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a10 10 0 0 1 20 0v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+                {{ _("العودة للرئيسية") if is_arabic else _("Go back home") }}
+            </a>
+            
+            <a href="{{ lang_route }}/contact" class="btn-support inline-flex w-full sm:w-auto justify-center items-center gap-2 py-3.5 px-8 text-sm font-semibold rounded-md text-gray-800 dark:text-gray-100 bg-white dark:bg-[#121415] border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-lg hover:shadow-gray-200 dark:hover:shadow-black/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+                {{ _("الإبلاغ عن مشكلة") if is_arabic else _("Report a problem") }}
+            </a>
+        </div>
+        
+        <!-- Subtle Footer Note -->
+        <p class="pt-6 text-sm text-gray-500 dark:text-gray-600 text-center">
+            {{ _("إذا قمت بكتابة الرابط يدويًا، يرجى التحقق من صحة الإملاء والمحاولة مرة أخرى.") if is_arabic else _("If you typed the URL, please check your spelling and try again.") }}
+        </p>
+    </div>
+</div>
+{% endblock %}

@@ -16,7 +16,12 @@ def execute(filters=None):
     }
 
     for row in data:
+        print("=========================================")
+        print(row)
         if row.get("voucher_type") in translations:
             row["voucher_type"] = translations[row["voucher_type"]]
+        
+        if row.get("voucher_subtype") in translations:
+            row["voucher_subtype"] = translations[row["voucher_subtype"]]
 
     return columns, data, message, chart

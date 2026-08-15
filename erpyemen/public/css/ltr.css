@@ -1,0 +1,73 @@
+/* AuTech Theme - LTR Support */
+/* This file contains LTR-specific overrides */
+
+[dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+}
+
+[dir="ltr"] .autech-sidebar {
+    border-right: 1px solid var(--border-color);
+    border-left: none;
+}
+
+[dir="ltr"] .autech-sidebar.collapsed ~ .autech-main-content {
+    margin-left: var(--sidebar-collapsed-width);
+    margin-right: 0;
+}
+
+[dir="ltr"] .autech-sidebar:not(.open) {
+    transform: translateX(-100%);
+}
+
+[dir="ltr"] .autech-sidebar.open {
+    transform: translateX(0);
+}
+
+[dir="ltr"] .menu-item .menu-icon {
+    margin-right: 12px;
+    margin-left: 0;
+}
+
+[dir="ltr"] .menu-item .menu-chevron {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+[dir="ltr"] .menu-item.active::before {
+    left: 0;
+    right: auto;
+    border-radius: 0 4px 4px 0;
+}
+
+[dir="ltr"] .sub-menu {
+    padding-left: 40px;
+    padding-right: 0;
+}
+
+[dir="ltr"] .language-dropdown {
+    right: 0;
+    left: auto;
+}
+
+[dir="ltr"] .language-dropdown button {
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    [dir="ltr"] .autech-sidebar {
+        transform: translateX(-100%);
+    }
+    
+    [dir="ltr"] .autech-sidebar:not(.open) {
+        transform: translateX(-100%);
+    }
+    
+    [dir="ltr"] .autech-sidebar.open {
+        transform: translateX(0);
+    }
+    
+    [dir="ltr"] .autech-main-content {
+        margin-left: 0 !important;
+    }
+}

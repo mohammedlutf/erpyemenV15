@@ -26,11 +26,31 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/erpyemen/css/erpyemen.css"
-# app_include_js = "/assets/erpyemen/js/erpyemen.js"
+# app_include_js = "/templates/pages/comm.js"
+app_include_css = ["/assets/erpyemen/css/fonts.css",
+                    # "/assets/erpyemen/css/datavalue_menu_override.css"
 
+
+]
+# app_include_js = "/assets/erpyemen/js/datavalue_menu_override.js"
+# app_include_css = [
+#     "/assets/erpyemen/css/modern_theme.css",
+#     "/assets/erpyemen/css/ltr.css",
+#     "/assets/erpyemen/css/rtl.css",
+#     "/assets/erpyemen/css/dark.css"
+# ]
+
+# app_include_js = [
+#     "/assets/erpyemen/js/theme.js",
+#     "/assets/erpyemen/js/sidebar.js",
+#     "/assets/erpyemen/js/settings.js"
+# ]
+# # include js, css files in header of web template
+# web_include_css = "/assets/erpyemen/css/modern_theme.css"
+# web_include_js = "/assets/erpyemen/js/modern_theme.js"
 # include js, css files in header of web template
 # web_include_css = "/assets/erpyemen/css/erpyemen.css"
-# web_include_js = "/assets/erpyemen/js/erpyemen.js"
+# web_include_js = "/assets/erpyemen/js/comm.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "erpyemen/public/scss/website"
